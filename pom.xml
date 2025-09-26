@@ -1,11 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+        <modelVersion>4.0.0</modelVersion>
 
-    <groupId>es.etg.prog.mvc</groupId>
-    <artifactId>jfx2_mvcsimple</artifactId>
+    <groupId>es.etg.dax</groupId>
+    <artifactId>ejercicio</artifactId>
     <version>1.0</version>
 
     <properties>
@@ -13,37 +13,47 @@
     </properties>
 
     <dependencies>
+        <!-- JavaFX -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>21.0.2</version>
         </dependency>
-
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>21.0.2</version>
         </dependency>
 
-        <!-- Dependencia de Lombok-->
+        <!-- Lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.42</version>
+            <version>1.18.40</version>
+            <scope>provided</scope>
         </dependency>
-        
     </dependencies>
 
     <build>
         <plugins>
+            <!-- Compilador -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.12.1</version>
                 <configuration>
                     <release>21</release>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.40</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
+
+            <!-- JavaFX -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
@@ -52,7 +62,7 @@
                     <execution>
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>es.etg.prog.mvc.App</mainClass>
+                            <mainClass>es.etg.dax.Main</mainClass>
                         </configuration>
                     </execution>
                 </executions>
