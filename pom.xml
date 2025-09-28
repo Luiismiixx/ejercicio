@@ -4,8 +4,8 @@
          http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>es.etg.prog.mvc</groupId>
-    <artifactId>jfx2_mvcsimple</artifactId>
+    <groupId>es.etg.dax</groupId>
+    <artifactId>ejercicio</artifactId>
     <version>1.0</version>
 
     <properties>
@@ -24,12 +24,22 @@
             <artifactId>javafx-fxml</artifactId>
             <version>21.0.2</version>
         </dependency>
-
-        <!-- Dependencia de Lombok-->
+        <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.42</version>
+            <version>1.18.40</version>
+        </dependency>
+         <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.13.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>5.19.0</version>
+            <scope>test</scope>
         </dependency>
         
     </dependencies>
@@ -52,7 +62,7 @@
                     <execution>
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>es.etg.prog.mvc.App</mainClass>
+                            <mainClass>es.etg.dax.Main</mainClass>
                         </configuration>
                     </execution>
                 </executions>
