@@ -6,7 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        AlumnoController controller = new AlumnoController();
 
         Application.launch(AlumnoController.class, args);
     }

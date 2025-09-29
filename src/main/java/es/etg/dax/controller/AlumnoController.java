@@ -25,10 +25,9 @@ public class AlumnoController extends Application{
     @Override
     public void start(Stage stage) throws IOException {
 
-        //Inicializo el modelo
         model = AlumnoFactory.obtener();
 
-        //Cargo la vista
+        
         stage.setScene(cargarVista(VIEW_MAIN));
         stage.show();
     }
@@ -37,7 +36,6 @@ public class AlumnoController extends Application{
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource(ficheroView));
         Parent root = (Parent)fxmlLoader.load();  
 
-        //Obtengo el controlador de la vista para pasarle una referencia al controlador - MVC:
         FichaViewController viewController = fxmlLoader.<FichaViewController>getController();
         viewController.setAlumnoController(this);
         Scene scene = new Scene(root); 
