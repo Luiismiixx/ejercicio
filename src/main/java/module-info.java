@@ -1,7 +1,7 @@
 module es.etg.dax {
     requires javafx.controls;
     requires javafx.fxml;
-    requires lombok;
+    requires static lombok;
 
     opens es.etg.dax to javafx.fxml;
     opens es.etg.dax.view to javafx.fxml;
