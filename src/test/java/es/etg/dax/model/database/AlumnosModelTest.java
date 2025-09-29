@@ -1,11 +1,9 @@
-package es.etg.dax.controller;
-
+package es.etg.dax.model.database;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.*;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -16,15 +14,14 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import es.etg.dax.model.Alumno;
-import es.etg.dax.model.database.AlumnosDAO;
 
 
 
 @ExtendWith(MockitoExtension.class)
-public class AlumnoCotrollerTest {
+public class AlumnosModelTest {
 
     @InjectMocks
-    AlumnoController alumnoController;
+    AlumnosModel alumnosModel;
 
     @Mock
     AlumnosDAO alumnosDAO;
@@ -34,7 +31,7 @@ public class AlumnoCotrollerTest {
         
         Mockito.when(alumnosDAO.insert(any())).thenReturn(1);
 
-        boolean resultado = alumnoController.crearAlumno("Luismi", "Lopez", 18);
+        boolean resultado = alumnosModel.crearAlumno("Luismi", "Lopez", 18);
 
         assertTrue(resultado);
     }    
@@ -44,10 +41,10 @@ public class AlumnoCotrollerTest {
         
         Mockito.when(alumnosDAO.listAll()).thenReturn(List.of());
 
-        List<Alumno> list = alumnoController.listarAlumnos();
+        List<Alumno> list = alumnosModel.listarAlumnos();
 
         assertNotNull(list);
         assertTrue(list.isEmpty());
     }
-
+    
 }
